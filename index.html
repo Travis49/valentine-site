@@ -84,7 +84,8 @@
 </div>
 
 <!-- 🔊 Sounds -->
-<audio id="yesSound" src="https://www.soundjay.com/human/sounds/applause-01.mp3"></audio>
+<!-- Love sound (applause for YES) -->
+<audio id="loveSound" src="https://www.soundjay.com/human/sounds/applause-01.mp3" preload="auto"></audio>
 <audio id="moveSound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
 
 <script>
@@ -101,12 +102,15 @@
   });
 
   // 💖 YES click
-  function yesClick() {
-    document.getElementById("yesSound").play();
-    setTimeout(() => {
-      window.location.href = "yes.html";
-    }, 500);
-  }
+ function yesClick() {
+  const loveSound = document.getElementById("loveSound");
+  loveSound.play(); // plays applause sound
+
+  // Redirect to YES page with fireworks after 1.5 seconds
+  setTimeout(() => {
+    window.location.href = "yes.html";
+  }, 1500);
+}
 
   // 💕 Heart Rain
   function createHeart() {
@@ -125,6 +129,7 @@
 
 </body>
 </html>
+
 
 
 
