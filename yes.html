@@ -2,46 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>You Said YES!</title>
-
+<title>Yay! 💖</title>
 <style>
   body {
+    margin: 0;
     height: 100vh;
+    background: #000; /* night sky for fireworks */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff0f6;
+    color: #fff;
     font-family: Arial, sans-serif;
-    overflow: hidden;
-  }
-
-  .emoji {
-    font-size: 6rem;
-    animation: dance 0.6s infinite alternate;
-  }
-
-  @keyframes dance {
-    from {
-      transform: rotate(-15deg) scale(1);
-    }
-    to {
-      transform: rotate(15deg) scale(1.1);
-    }
   }
 
   h1 {
-    color: #ff2f92;
+    font-size: 3rem;
+    color: #ff4d94;
+    z-index: 2;
     text-align: center;
+  }
+
+  .firework {
+    position: absolute;
+    top: -50px;
+    font-size: 40px;
+    animation: fall linear forwards;
+    opacity: 1;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
   }
 </style>
 </head>
-
 <body>
 
-<div style="text-align:center;">
-  <div class="emoji">🥰💃🕺</div>
-  <h1>Yaaaay!!! 💖💖💖</h1>
-</div>
+<h1>Yay! You said YES! 🎉💖</h1>
+
+<script>
+  function createFirework() {
+    const fw = document.createElement("div");
+    fw.className = "firework";
+    fw.innerHTML = "🎆";
+    fw.style.left = Math.random() * window.innerWidth + "px";
+    fw.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(fw);
+
+    setTimeout(() => fw.remove(), 5000);
+  }
+
+  setInterval(createFirework, 200); // more fireworks
+</script>
 
 </body>
 </html>
