@@ -43,7 +43,11 @@
 
 <h1>Yay! You said YES! 🎉💖</h1>
 
+<!-- Applause / love sound -->
+<audio id="loveSound" src="https://www.soundjay.com/human/sounds/applause-01.mp3" preload="auto" autoplay></audio>
+
 <script>
+  // 💥 Fireworks animation
   function createFirework() {
     const fw = document.createElement("div");
     fw.className = "firework";
@@ -55,7 +59,7 @@
     setTimeout(() => fw.remove(), 5000);
   }
 
-  setInterval(createFirework, 200); // more fireworks
+  setInterval(createFirework, 200); // lots of fireworks
 </script>
 
 </body>
