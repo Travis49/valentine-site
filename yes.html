@@ -40,6 +40,22 @@
 </style>
 </head>
 <body>
+  <audio id="loveSound" src="https://www.soundjay.com/human_c2026/sounds/applause-01.mp3"></audio>
+
+<script>
+  const loveSound = document.getElementById("loveSound");
+
+  // Play sound when page loads
+  window.addEventListener("load", () => {
+    loveSound.play();
+
+    // Stop after 3 seconds
+    setTimeout(() => {
+      loveSound.pause();
+      loveSound.currentTime = 0;
+    }, 3000);
+  });
+</script>
 
 <h1>Yay! You said YES! 🎉💖</h1>
 
@@ -60,3 +76,4 @@
 
 </body>
 </html>
+
